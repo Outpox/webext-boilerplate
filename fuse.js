@@ -25,7 +25,15 @@ const extension = fuse.bundle('panel')
     .instructions('>panel.ts')
 
 if (dev) {
+    fs.watch('src/build/default_manifest.json', {}, _ => {
+        updateManifest()
+    })
     extension.watch()
 }
 
+updateManifest()
 fuse.run()
+
+function updateManifest () {
+    fs.copySync('src/build/default_manifest.json', 'dist/manifest.json')
+}

@@ -1,0 +1,9 @@
+{
+    "description": "",
+    "manifest_version": 2,
+    "name": "mynewextenstion",
+    "version": "1.0",
+    "author": "Guillaume 'Outpox' Migeon",
+    "icons": {},
+    "permissions": [""]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "webext-boilerplate",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Guillaume 'Outpox' Migeon",
+  "license": "ISC",
+  "scripts": {
+    "build": "node fuse.js --production; node build.js",
+    "dev": "node fuse.js",
+    "debug": "./node_modules/.bin/web-ext run --source-dir dist",
+    "debugosx": "./node_modules/.bin/web-ext run --source-dir dist -f /Applications/FirefoxNightly.app/Contents/MacOS/firefox-bin"
+  },
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ],
+    "ignore": [
+      "fuse.js",
+      "dist/js/panel.js"
+    ],
+    "global": [
+      "browser"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^4.14.0",
+    "eslint-plugin-typescript": "^0.8.1",
+    "fs-extra": "^5.0.0",
+    "fuse-box": "^2.5.0-beta.1",
+    "standard": "^10.0.3",
+    "typescript": "^2.6.2",
+    "typescript-eslint-parser": "^11.0.0",
+    "uglify-es": "^3.3.3",
+    "web-ext": "^2.2.2",
+    "web-ext-types": "^2.0.1",
+    "zip-dir": "^1.0.2"
+  }
+}

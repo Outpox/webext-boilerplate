@@ -1,5 +1,5 @@
-    node_modules/
-    builds/
-    .fusebox/
-    .vscode/
-    .idea/
+node_modules/
+builds/
+.fusebox/
+.vscode/
+.idea/

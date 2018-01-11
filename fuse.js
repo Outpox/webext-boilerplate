@@ -1,4 +1,5 @@
 const dev = process.argv[2] ? (process.argv[2].indexOf('development') !== -1) || (process.argv[2].indexOf('production') === -1) : true
+const fs = require('fs-extra')
 
 const {
     FuseBox,
@@ -21,14 +22,14 @@ if (!dev) {
 
 const fuse = FuseBox.init(fuseBoxConfig)
 
-const extension = fuse.bundle('panel')
+const panel = fuse.bundle('panel')
     .instructions('>panel.ts')
 
 if (dev) {
     fs.watch('src/build/default_manifest.json', {}, _ => {
         updateManifest()
     })
-    extension.watch()
+    panel.watch()
 }
 
 updateManifest()

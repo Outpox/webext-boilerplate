@@ -32,9 +32,16 @@ if (dev) {
     panel.watch()
 }
 
+browserPolyfill()
 updateManifest()
 fuse.run()
 
 function updateManifest () {
     fs.copySync('src/build/default_manifest.json', 'dist/manifest.json')
+}
+
+function browserPolyfill () {
+    if (!fs.pathExistsSync('dist/js/browser-polyfill.min.js')) {
+        fs.copySync('node_modules/webextension-polyfill/dist/browser-polyfill.min.js', 'dist/js/browser-polyfill.min.js')
+    }
 }

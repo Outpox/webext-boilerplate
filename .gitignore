@@ -6,3 +6,5 @@ builds/
 !.vscode/settings.json
 .idea/
 .DS_Store
+dist/js/browser-polyfill.min.js
+dist/manifest.json

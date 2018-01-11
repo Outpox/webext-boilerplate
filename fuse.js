@@ -24,12 +24,24 @@ const fuse = FuseBox.init(fuseBoxConfig)
 
 const panel = fuse.bundle('panel')
     .instructions('>panel.ts')
+    
+const content = fuse.bundle('content')
+    .instructions('>content.ts')
+    
+const background = fuse.bundle('background')
+    .instructions('>background.ts')
+    
+const popup = fuse.bundle('popup')
+    .instructions('>popup.ts')
 
 if (dev) {
     fs.watch('src/build/default_manifest.json', {}, _ => {
         updateManifest()
     })
     panel.watch()
+    content.watch()
+    background.watch()
+    popup.watch()
 }
 
 browserPolyfill()

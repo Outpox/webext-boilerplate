@@ -3,16 +3,15 @@ const fs = require('fs-extra')
 
 const {
     FuseBox,
-    TypeScriptHelpers,
     UglifyESPlugin
 } = require('fuse-box')
 
 const fuseBoxConfig = {
     homeDir: 'src',
     output: 'dist/js/$name.js',
-    plugins: [
-        TypeScriptHelpers(),
-    ],
+    plugins: [],
+    target: 'browser',
+    tsConfig: 'tsconfig.json',
     experimentalFeatures: true 
 }
 

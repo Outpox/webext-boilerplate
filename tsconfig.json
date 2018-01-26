@@ -9,6 +9,8 @@
     "removeComments": true,
     "strict": true,
     "alwaysStrict": true,
-    "types": ["node_modules/web-ext-types/global/index.d.ts", "src/types/*"]
+    "types": ["node_modules/web-ext-types/global/index.d.ts", "src/types/*"],
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
   }
 }

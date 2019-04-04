@@ -21,7 +21,7 @@ buildTarget('chrome')
 
 function buildTarget (target) {
   const targetFolder = path.join(buildFolder, target)
-  const targetProperties = require(`./src/build/${target}.js`)
+  const targetProperties = require(`./src/build/${target}.json`)
   const targetManifest = Object.assign({}, defaultManifest, targetProperties)
 
   fs.mkdirSync(targetFolder)
